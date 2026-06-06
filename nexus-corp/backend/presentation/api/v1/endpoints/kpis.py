@@ -64,6 +64,6 @@ def list_kpis(
     # total is list of {category, count}, sum them up
     total_count = sum(item["count"] for item in total)
     return KPIListResponse(
-        kpis=[_kpi_to_response(k) for k in kpis],
+        items=[_kpi_to_response(k) for k in kpis],
         total=total_count,
     )

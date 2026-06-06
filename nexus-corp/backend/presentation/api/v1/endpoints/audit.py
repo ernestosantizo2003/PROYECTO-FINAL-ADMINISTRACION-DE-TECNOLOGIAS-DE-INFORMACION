@@ -45,8 +45,6 @@ def list_audit_logs(
     )
     total = audit_repo.count()
     return AuditLogListResponse(
-        logs=[_audit_to_response(l) for l in logs],
+        items=[_audit_to_response(l) for l in logs],
         total=total,
-        skip=skip,
-        limit=limit,
     )

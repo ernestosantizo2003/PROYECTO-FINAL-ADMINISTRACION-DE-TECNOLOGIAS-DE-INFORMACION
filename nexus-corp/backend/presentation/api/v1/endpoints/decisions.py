@@ -68,7 +68,7 @@ def list_decisions(
     decisions = use_case.execute(skip=skip, limit=limit)
     total = decision_repo.count()
     return DecisionListResponse(
-        decisions=[_decision_to_response(d) for d in decisions],
+        items=[_decision_to_response(d) for d in decisions],
         total=total,
     )
 

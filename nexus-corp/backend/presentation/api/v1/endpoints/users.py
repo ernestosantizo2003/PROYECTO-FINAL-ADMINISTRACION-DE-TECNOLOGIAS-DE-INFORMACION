@@ -53,10 +53,8 @@ def list_users(
     users = use_case.execute(skip=skip, limit=limit)
     total = user_repo.count()
     return UserListResponse(
-        users=[_user_to_response(u) for u in users],
+        items=[_user_to_response(u) for u in users],
         total=total,
-        skip=skip,
-        limit=limit,
     )
 
 

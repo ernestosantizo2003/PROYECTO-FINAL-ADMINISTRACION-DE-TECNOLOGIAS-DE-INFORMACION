@@ -48,7 +48,7 @@ class UserResponse(BaseModel):
 
 
 class UserListResponse(BaseModel):
-    users: list[UserResponse]
+    items: list[UserResponse]
     total: int
-    skip: int
-    limit: int
+    page: int = 0
+    size: int = 50

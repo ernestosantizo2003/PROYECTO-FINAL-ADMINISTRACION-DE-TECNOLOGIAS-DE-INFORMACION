@@ -73,10 +73,10 @@ export const DashboardPage: React.FC = () => {
     );
   }
 
-  const feedbackPieData = stats?.feedback_distribution.map((f) => ({
+  const feedbackPieData = (stats?.feedback_distribution ?? []).map((f) => ({
     name: `${f.rating} estrellas`,
     value: f.count,
-  })) || [];
+  }));
 
   return (
     <div className="space-y-6">
@@ -115,7 +115,7 @@ export const DashboardPage: React.FC = () => {
             <BarChart data={stats?.decisions_by_month || []}>
               <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
               <XAxis
-                dataKey="month"
+                dataKey="label"
                 tick={{ fontSize: 12, fill: '#6b7280' }}
               />
               <YAxis tick={{ fontSize: 12, fill: '#6b7280' }} />
@@ -198,7 +198,7 @@ export const DashboardPage: React.FC = () => {
             <LineChart data={stats?.decisions_by_month || []}>
               <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
               <XAxis
-                dataKey="month"
+                dataKey="label"
                 tick={{ fontSize: 12, fill: '#6b7280' }}
               />
               <YAxis tick={{ fontSize: 12, fill: '#6b7280' }} />

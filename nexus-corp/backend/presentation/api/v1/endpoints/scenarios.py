@@ -44,7 +44,7 @@ def list_scenarios(
     scenarios = use_case.execute(skip=skip, limit=limit)
     total = scenario_repo.count()
     return ScenarioListResponse(
-        scenarios=[_scenario_to_response(s) for s in scenarios],
+        items=[_scenario_to_response(s) for s in scenarios],
         total=total,
     )
 

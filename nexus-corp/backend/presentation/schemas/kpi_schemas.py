@@ -18,8 +18,10 @@ class KPIResponse(BaseModel):
 
 
 class KPIListResponse(BaseModel):
-    kpis: List[KPIResponse]
+    items: List[KPIResponse]
     total: int
+    page: int = 0
+    size: int = 50
 
 
 class DashboardResponse(BaseModel):

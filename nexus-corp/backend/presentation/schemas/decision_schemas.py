@@ -64,5 +64,7 @@ class DecisionWithRecommendationsResponse(BaseModel):
 
 
 class DecisionListResponse(BaseModel):
-    decisions: List[DecisionResponse]
+    items: List[DecisionResponse]
     total: int
+    page: int = 0
+    size: int = 50

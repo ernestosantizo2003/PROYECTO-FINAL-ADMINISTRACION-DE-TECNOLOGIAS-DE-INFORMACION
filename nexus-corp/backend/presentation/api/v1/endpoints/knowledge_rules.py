@@ -57,7 +57,7 @@ def list_rules(
     rules = use_case.execute(skip=skip, limit=limit, is_active=is_active, category=category)
     total = rule_repo.count()
     return KnowledgeRuleListResponse(
-        rules=[_rule_to_response(r) for r in rules],
+        items=[_rule_to_response(r) for r in rules],
         total=total,
     )
 

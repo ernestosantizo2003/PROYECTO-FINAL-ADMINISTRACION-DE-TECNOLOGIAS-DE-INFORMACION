@@ -57,7 +57,7 @@ def list_feedback(
     feedbacks = use_case.execute(skip=skip, limit=limit)
     total = feedback_repo.count()
     return FeedbackListResponse(
-        feedback=[_feedback_to_response(f) for f in feedbacks],
+        items=[_feedback_to_response(f) for f in feedbacks],
         total=total,
     )
 

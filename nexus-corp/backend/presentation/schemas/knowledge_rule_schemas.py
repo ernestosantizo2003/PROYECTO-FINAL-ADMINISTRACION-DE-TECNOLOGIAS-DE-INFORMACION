@@ -74,5 +74,7 @@ class KnowledgeRuleResponse(BaseModel):
 
 
 class KnowledgeRuleListResponse(BaseModel):
-    rules: List[KnowledgeRuleResponse]
+    items: List[KnowledgeRuleResponse]
     total: int
+    page: int = 0
+    size: int = 50

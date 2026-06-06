@@ -40,8 +40,10 @@ class FeedbackResponse(BaseModel):
 
 
 class FeedbackListResponse(BaseModel):
-    feedback: List[FeedbackResponse]
+    items: List[FeedbackResponse]
     total: int
+    page: int = 0
+    size: int = 50
 
 
 class FeedbackStatsResponse(BaseModel):

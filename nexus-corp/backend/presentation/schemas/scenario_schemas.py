@@ -46,5 +46,7 @@ class ScenarioResponse(BaseModel):
 
 
 class ScenarioListResponse(BaseModel):
-    scenarios: List[ScenarioResponse]
+    items: List[ScenarioResponse]
     total: int
+    page: int = 0
+    size: int = 50
